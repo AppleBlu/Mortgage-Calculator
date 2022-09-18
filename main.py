@@ -1,4 +1,5 @@
 import art
+import banks
 import customer
 
 is_on = True
@@ -25,7 +26,8 @@ def application():
         customer_option = input("Enter your option here: ")
 
         if customer_option == '1':
-            pass
+            banks.Banks.__repr__()
+            user_choice()
         elif customer_option == '2':
             pass
         elif customer_option == '3':
