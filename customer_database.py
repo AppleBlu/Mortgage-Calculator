@@ -1,0 +1,2 @@
+class CustomerDatabase:
+    pass
