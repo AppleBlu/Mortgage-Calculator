@@ -7,13 +7,11 @@ class Banks:
         "Barclays": 3
     }
 
-    def __init__(self):
-        pass
-
-
     def __repr__():
         print("{:<26} {:<15}".format('Bank','Interest Rate'))
         print('----------------------------------------')
         for key, value in Banks.available_banks.items():
             value = str(value) + '%'
             print("{:<26} {:<15}".format(key, value))
+
+Banks.__repr__()
