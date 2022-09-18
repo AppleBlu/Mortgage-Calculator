@@ -1,3 +1,5 @@
+from time import sleep
+import random
 class Banks:
 
     available_banks = {
