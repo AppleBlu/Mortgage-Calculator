@@ -17,6 +17,3 @@ class Banks:
         for key, value in Banks.available_banks.items():
             value = str(value) + '%'
             print("{:<26} {:<15}".format(key, value))
-
-
-Banks.__repr__()
