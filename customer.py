@@ -8,7 +8,7 @@ class Customer():
 # making a function to return user inputs
     def user_inputs():
         down_payment = input('How much would you like to give as a down payment? \nPlease enter here: ')
-        purchase_price = input('What is the value of the propety you are trying to purchase? \nPlease enter here: ')
+        purchase_price = input('What is the value of the property you are trying to purchase? \nPlease enter here: ')
 # test        
         # print(down_payment)
         # print(purchase_price)
