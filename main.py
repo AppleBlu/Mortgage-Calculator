@@ -3,13 +3,21 @@ import customer
 
 is_on = True
 
+def user_choice():
+    global is_on
+    user_option = input("Do you want to continue?(yes/no): ")
+    if user_option == 'yes':
+        application()
+    else:
+        is_on = False
+
 def application():
     while is_on:
         print(art.art)
         print("-------------------------------------------------")
         print("Please, choose the option")
-        print("1. Calculate the mortgage")
-        print("2. Available banks and rates")
+        print("1. Available banks and rates")
+        print("2. Calculate the mortgage")
         print("3. Contact support")
         print("4. Exit")
         print("-------------------------------------------------")
