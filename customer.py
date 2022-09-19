@@ -2,7 +2,7 @@
 class Customer():
     bank_selection = ''
     purchase_price = 0
-    reypayment_time = 0
+    repayment_time = 0
     down_payment = 0
 
 # making a constructor
@@ -18,7 +18,7 @@ class Customer():
 
         Customer.down_payment += down_payment
         Customer.purchase_price += purchase_price
-        Customer.reypayment_time += repayment_time
+        Customer.repayment_time += repayment_time
         Customer.bank_selection += bank_selection_input 
         
 
