@@ -1,3 +1,6 @@
+# importing modules
+import customer
+
 # creating a class called calculator
 class Calculator():
 
