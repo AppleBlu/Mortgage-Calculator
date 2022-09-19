@@ -1,11 +1,28 @@
 from time import sleep
+import time 
+import sys
 import re
 
 customers = {0: {'name': 'Dummy', 'surname': 'Joe', 'email': 'joe@dummy.com', 'phone': '00000000',
                  'username': 'dummyjoe', 'password': 'dumbpass123'},
              }
 
-
+# creating a function that types out strings slow instead of printing them
+def type_slow(str):
+    for letter in str:
+        print(letter, end='')
+        sys.stdout.flush()
+        time.sleep(0.1)
+    print('\n')
+ 
+# creating a function that types out strings fast instead of printing them
+def type_fast(str):
+    for letter in str:
+        print(letter, end='')
+        sys.stdout.flush()
+        time.sleep(0.02)
+    print('\n')
+    
 class CustomerDatabase:
 
     def register_customer():
@@ -13,53 +30,54 @@ class CustomerDatabase:
         user_first_name = input("Please enter your name below \nFirst name: ")
         regex = re.search(r"^[a-zA-Z]+$", user_first_name)
         if not regex:
-            print('First name should only contain letters. Please try again')
+            type_fast('First name should only contain letters. Please try again')
+            sleep(2)
             exit()
 
         user_surname = input("Surname: ")
         regex = re.match(r"^[a-zA-Z]+$", user_surname)
         if not regex:
-            print('Surname should only contain letters. Please try again')
+            type_fast('Surname should only contain letters. Please try again')
+            sleep(2)
             exit()
 
         user_email = input('Please enter your email below \nEmail: ')
         regex = re.match(r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b', user_email)
-        print('Checking email... Please wait!')
-        sleep(2)
+        type_slow('Checking email... Please wait!')
+        sleep(3)
         if regex:
-            print("Email valid")
+            type_fast("Email valid")
         else:
-            print('Invalid email address. Please try again')
+            type_fast('Invalid email address. Please try again')
+            sleep(2)
             exit()
 
         user_number = input('Enter your phone number here: ')
         regex = re.match(r"^[0-9]{7,12}$", user_number)
-        print('Checking phone number... Please wait!')
+        type_slow('Checking phone number... Please wait!')
         sleep(2)
         if regex:
-            print('Number valid')
+            type_fast('Number valid')
         else:
-            print('Invalid number. You should enter a number between 7 and 12 numbers long. Please try again')
+            type_fast('Invalid number. You should enter a number between 7 and 12 numbers long. Please try again')
+            sleep(2)
             exit()
 
         username = input("Please enter your username: ")
         regex = re.search(r"^[a-zA-Z0-9\_]+$", username)
         if not regex:
-            print(
-                'Username can not contain spaces but can containe underscores, numbers and letters. \nPlease try again.')
+            type_fast('Username can not contain spaces but can containe underscores, numbers and letters. \nPlease try again.')
+            sleep(2)
             exit()
 
         password = input("Please enter your password: ")
         regex = re.search(r"^[a-zA-Z0-9\_]+$", password)
         if not regex:
-            print(
-                'Passwords can not contain spaces but can containe underscores, numbers and letters. \nPlease try again.')
+            type_fast('Passwords can not contain spaces but can containe underscores, numbers and letters. \nPlease try again.')
+            sleep(2)
             exit()
 
-        # Cannot be two underscores, two hypens or two spaces in a row
-        # Cannot have a underscore, hypen or space at the start or end
-
-        print("Registering customer... please, wait!")
+        type_slow("We are registering you... please, wait!")
         customers[1] = {}
         customers[1]['name'] = user_first_name
         customers[1]['surname'] = user_surname
@@ -68,4 +86,4 @@ class CustomerDatabase:
         customers[1]['username'] = username
         customers[1]['password'] = password
         sleep(5)
-        print("Customer created. You may now login with your username and password.")
+        type_fast("Customer created. You may now login with your username and password.")
