@@ -1,5 +1,7 @@
 from time import sleep
 import random
+import customer
+
 class Banks:
 
     available_banks = {
@@ -16,11 +18,7 @@ class Banks:
             value = str(value) + '%'
             print("{:<26} {:<15}".format(key, value))
 
-    def contact_support(name, surname, email, phone, message):
-        # name = input("Please, enter your name: ")
-        # surname = input("Please, enter your surname: ")
-        # email = input("Please, enter your email: ")
-        # phone = input("Please, enter your phone: ")
+    def contact_support(message):
         # message = input("Please, enter your message: ")
         ticket_number = random.randint(10000,30000)
         delay = 2
