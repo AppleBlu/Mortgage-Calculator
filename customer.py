@@ -1,7 +1,16 @@
 # create a class for the customer
-from collections import UserDict
 import banks
+import time
+import sys
+from time import sleep
 
+# creating a function that types out strings slow instead of printing them
+def type_slow(str):
+    for letter in str:
+        print(letter, end='')
+        sys.stdout.flush()
+        time.sleep(0.1)
+    print('\n')
 
 class Customer():
     user_dict = {}
@@ -9,13 +18,18 @@ class Customer():
     interest_rate = 0
     loan_with_interest = 0
     
-
 # making a function to return user inputs
     def user_inputs():
         down_payment = input('How much would you like to give as a down payment? \nPlease enter here: ')
         purchase_price = input('What is the value of the property you are trying to purchase? \nPlease enter here: ')
         repayment_time = input('How long do you need to repay the loan with interest? (in months) \nPlease enter here: ')
         bank_selection_input = input('What bank would you like to apply for a mortgage with? \nPlease enter here: ')
+        if bank_selection_input in banks.Banks.available_banks.keys():
+            type_slow('Calculating...')
+            sleep(3)
+        else:
+            print('Sorry we do not provide this service for that bank. Please try again.')
+            exit()
 
         Customer.user_dict['down_payment'] = down_payment
         Customer.user_dict['purchase_price'] = purchase_price
