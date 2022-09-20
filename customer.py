@@ -27,9 +27,4 @@ class Customer():
         Customer.loan_with_interest = Customer.interest_rate * Customer.loan_amount
 
 
-
-
-
 # test1 = Customer
-# print(test1.user_inputs())
-# print(test1.bank_selection)
