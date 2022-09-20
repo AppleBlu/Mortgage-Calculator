@@ -1,23 +1,23 @@
 # importing modules
 import customer
-import banks
 
 # creating a class called calculator
 class Calculator():
-    rt = customer.Customer.reypayment_time
-    pp = customer.Customer.purchase_price
-    dp = customer.Customer.down_payment
-    bs = customer.Customer.bank_selection
+    
+    def calculate():
+        
+        # tr stands for total loan
+        tr = int(customer.Customer.loan_amount)
+        # ir stands for iterest rate
+        ir = int(customer.Customer.interest_rate)
+        # mp stands for monthly payment
+        mp = int(customer.Customer.user_dict.get('repayment_time'))
+        calculation = tr + ir + mp
+        print(calculation)
+        
+        #calculation = tr(ir(1+ir)**mp/((1+ir)**mp)-1)
+        #M = P[r(1+r)^n/((1+r)^n)-1)]
+    
+# test1 = Calculator
 
-# creating a constructor for class Calculator():
-    def __init__():
-        pass
-
-    def get_interest():
-        banks_interest = banks.Banks.available_banks.get(Calculator.bs)
-        print(banks_interest)
-
-
-test1 = Calculator
-
-print(test1.get_interest())
+# print(test1.get_interest())

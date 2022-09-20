@@ -1,13 +1,14 @@
 # create a class for the customer
-class Customer():
-    bank_selection = ''
-    purchase_price = 0
-    repayment_time = 0
-    down_payment = 0
+from collections import UserDict
+import banks
 
-# making a constructor
-    def __init__(self):
-        pass
+
+class Customer():
+    user_dict = {}
+    loan_amount = 0
+    interest_rate = 0
+    loan_with_interest = 0
+    
 
 # making a function to return user inputs
     def user_inputs():
@@ -16,12 +17,19 @@ class Customer():
         repayment_time = input('How long do you need to repay the loan with interest? (in months) \nPlease enter here: ')
         bank_selection_input = input('What bank would you like to apply for a mortgage with? \nPlease enter here: ')
 
-        Customer.down_payment += down_payment
-        Customer.purchase_price += purchase_price
-        Customer.repayment_time += repayment_time
-        Customer.bank_selection += bank_selection_input 
+        Customer.user_dict['down_payment'] = down_payment
+        Customer.user_dict['purchase_price'] = purchase_price
+        Customer.user_dict['repayment_time'] = repayment_time
+        Customer.user_dict['bank_selection'] = bank_selection_input
         
+        Customer.loan_amount = int(purchase_price) - int(down_payment)
+        Customer.interest_rate = repayment_time * banks.Banks.available_banks.get(bank_selection_input)
+        Customer.loan_with_interest = Customer.interest_rate * Customer.loan_amount
 
-test1 = Customer
-print(test1.user_inputs())
-print(test1.bank_selection)
+
+
+
+
+# test1 = Customer
+# print(test1.user_inputs())
+# print(test1.bank_selection)
