@@ -5,10 +5,10 @@ import customer
 class Banks:
 
     available_banks = {
-        "HSBC Holdings": 4,
-        "Lloyds Banking Group": 4,
-        "NatWest Group": 5,
-        "Barclays": 3
+        "HSBC Holdings": 0.4,
+        "Lloyds Banking Group": 0.4,
+        "NatWest Group": 0.5,
+        "Barclays": 0.3
     }
 
     def __repr__():

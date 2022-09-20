@@ -20,7 +20,7 @@ def type_fast(str):
     for letter in str:
         print(letter, end='')
         sys.stdout.flush()
-        time.sleep(0.04)
+        time.sleep(0.05)
     print('\n')
     
 class CustomerDatabase:
@@ -44,9 +44,8 @@ class CustomerDatabase:
         user_email = input('Please enter your email below \nEmail: ')
         regex = re.match(r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b', user_email)
         type_slow('Checking email...')
-        sleep(2)
-        type_slow('Please wait!')
         sleep(3)
+
         if regex:
             type_fast("Email valid")
         else:
@@ -57,8 +56,6 @@ class CustomerDatabase:
         user_number = input('Enter your phone number here: ')
         regex = re.match(r"^[0-9]{7,12}$", user_number)
         type_slow('Checking phone number...')
-        sleep(2)
-        type_slow('Please wait!')
         sleep(3)
         
         if regex:
