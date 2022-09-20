@@ -21,9 +21,10 @@ class Customer():
         Customer.user_dict['purchase_price'] = purchase_price
         Customer.user_dict['repayment_time'] = repayment_time
         Customer.user_dict['bank_selection'] = bank_selection_input
-        
+
+        repayment_time_int = int(repayment_time)
         Customer.loan_amount = int(purchase_price) - int(down_payment)
-        Customer.interest_rate = repayment_time * banks.Banks.available_banks.get(bank_selection_input)
+        Customer.interest_rate = repayment_time_int * banks.Banks.available_banks.get(bank_selection_input)
         Customer.loan_with_interest = Customer.interest_rate * Customer.loan_amount
 
 

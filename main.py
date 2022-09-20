@@ -90,11 +90,11 @@ def application():
     elif customer_option_two == '2':
         customer.Customer.user_inputs()
         print('\n')
-        type_fast('The loan you would recive is:')
+        type_fast('The loan you would receive is:')
         type_fast('£' + str(customer.Customer.loan_amount))
         type_fast('What you would have to repay with interest is:')
         type_fast('£' + str(customer.Customer.loan_with_interest))
-        type_fast(customer.Customer.interest_rate)
+        type_fast(str(customer.Customer.interest_rate))
         #calculator.Calculator.calculate()
         #type_fast('The interest is')
         user_choice_application()
