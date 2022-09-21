@@ -1,3 +1,4 @@
+# creating title art for the application
 art = """                                                                         
  _____         _                   _____     _         _     _           
 |     |___ ___| |_ ___ ___ ___ ___|     |___| |___ _ _| |___| |_ ___ ___ 
