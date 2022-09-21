@@ -77,7 +77,6 @@ def login_customer():
 
 # creating a function to contact customer support
 def contact_support():
-    # message = input("Please, enter your message: ")
     ticket_number = random.randint(10000,30000)
     name = customers.get('name')
     surname = customers.get('surname')
@@ -124,7 +123,14 @@ def initial_screen():
 
         if customer_option_one == '1':
             print('\n')
-            customer_database.CustomerDatabase.register_customer()
+            customer_database.CustomerDatabase.register_name()
+            customer_database.CustomerDatabase.register_surname()
+            customer_database.CustomerDatabase.register_email()
+            customer_database.CustomerDatabase.register_phone()
+            customer_database.CustomerDatabase.register_username()
+            customer_database.CustomerDatabase.register_password()
+            customer_database.CustomerDatabase.confirm_password()
+            customer_database.CustomerDatabase.registration_complete()
             type_fast("Taking you back to the login menu...")
             sleep(2)
             initial_screen()
@@ -167,7 +173,6 @@ def application():
         type_fast('What you would have to repay with interest is:')
         type_fast('£' + str(customer.Customer.loan_with_interest))
         type_fast('You would have to pay this over {rt} months in increments of £{mp}.'.format(rt = customer.Customer.repayment_time_int, mp = customer.Customer.monthly_payment_rounded))
-        #type_fast('The interest is')
         user_choice_application()
     elif customer_option_two == '3':
         print('\n')
